@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MemberRepositoryTest {
+public class MemberTestTestRepositoryTest {
 
     @Autowired
     MemberRepository memberRepository;
@@ -19,17 +19,17 @@ public class MemberRepositoryTest {
     @Transactional
     public void testMember() {
         //given
-        Member member = new Member();
-        member.setUserName("test");
+        MemberTest memberTest = new MemberTest();
+        memberTest.setUserName("test");
 
         //when
-        Long saveId = memberRepository.save(member);
-        Member findMember = memberRepository.find(saveId);
+        Long saveId = memberRepository.save(memberTest);
+        MemberTest findMemberTestTest = memberRepository.find(saveId);
 
         //then
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        Assertions.assertThat(findMember.getUserName()).isEqualTo(member.getUserName());
-        Assertions.assertThat(findMember).isEqualTo(member);
+        Assertions.assertThat(findMemberTestTest.getId()).isEqualTo(memberTest.getId());
+        Assertions.assertThat(findMemberTestTest.getUserName()).isEqualTo(memberTest.getUserName());
+        Assertions.assertThat(findMemberTestTest).isEqualTo(memberTest);
     }
 
 
